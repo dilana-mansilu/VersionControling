@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garfield & Friends Selector</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 50px; }
+        select { padding: 10px; font-size: 16px; margin-bottom: 20px; }
+        img { max-width: 400px; height: auto; border: 2px solid #ddd; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+    <h2>Select a Character</h2>
+    
+    <select id="characterPicker">
+        <option value="Ben 10">Ben 10 </option>
+        <option value="Gwen">Gwen Tennyson</option>
+        <option value="Kevin">Kevin Levin</option>
+        <option value="xlmr8">XLR8</option>
+        
+    </select>
+
+    <div id="displayArea">
+        <img id="characterImage" src="ben10.jpg" alt="Ben 10">
+        
+    </div>
+
+    <script>
+        const selector = document.getElementById('characterPicker');
+        const displayImg = document.getElementById('characterImage');
+
+        selector.addEventListener('change', (event) => {
+            const name = event.target.value;
+            displayImg.src = `${name}.jpg`;
+            displayImg.alt = name;
+        });
+    </script>
+</body>
+</html>
